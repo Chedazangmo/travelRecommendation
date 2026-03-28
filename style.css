@@ -461,11 +461,228 @@ nav ul li button:active {
     }
     
     .homepage .social-icons {
+        gap: 20px;
+    }
+}
+
+/* ============================================ */
+/* ABOUT US SECTION */
+/* ============================================ */
+.aboutus {
+    background-image: url('https://d2vbr83hnyiux1.cloudfront.net/image/975050285728/image_ud2j2mmskp2jv6b53uutr9b21l/-FWEBP-Ro:5,w:1440,h:810,n:default');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    color: white;
+    overflow-y: hidden;
+}
+
+.aboutus::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
+    z-index: 1;
+}
+
+.aboutus-top {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 60px 5px 60px;
+    gap: 30px;
+}
+
+.aboutus-content {
+    flex: none;
+    max-width: 75%;
+}
+
+.aboutus-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.aboutus-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+/* Social Icons - Bigger */
+.social-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 50%;
+    color: white;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateX(-5px) scale(1.1);
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.social-icon.twitter:hover { background-color: #1DA1F2; }
+.social-icon.facebook:hover { background-color: #4267B2; }
+.social-icon.instagram:hover { background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.social-icon.youtube:hover { background-color: #FF0000; }
+
+/* Team Section - Reduced Space */
+.team-section {
+    position: relative;
+    z-index: 2;
+    padding: 0 60px 30px 60px;
+    margin-top: 0;
+}
+
+.team-section h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.team-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 10px;
+    border: 2px solid #3498db;
+}
+
+.team-card h3 {
+    font-size: 20px;
+    margin: 8px 0 4px;
+}
+
+.team-role {
+    color: #ffd700;
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.team-description {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .aboutus-top {
+        padding: 15px 40px 5px 40px;
+    }
+    .aboutus-content {
+        max-width: 70%;
+    }
+    .social-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 24px;
+    }
+    .team-section {
+        padding: 0 40px 25px 40px;
+    }
+    .team-container {
         gap: 12px;
     }
 }
 
+@media (max-width: 768px) {
+    .aboutus-top {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 30px;
+        gap: 20px;
+    }
+    .aboutus-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+    .team-section {
+        padding: 0 30px 20px 30px;
+    }
+    .team-section h2 {
+        font-size: 28px;
+    }
+    .team-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
 
+@media (max-width: 480px) {
+    .aboutus-top {
+        padding: 10px 20px;
+    }
+    .aboutus-content h1 {
+        font-size: 32px;
+    }
+    .aboutus-content p {
+        font-size: 14px;
+    }
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    .team-section {
+        padding: 0 20px 15px 20px;
+    }
+    .team-section h2 {
+        font-size: 24px;
+    }
+    .team-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .team-image {
+        width: 60px;
+        height: 60px;
+    }
+}
 
 /* General Responsive Design for Navigation */
 @media (max-width: 768px) {
@@ -537,4 +754,8 @@ nav ul li button:active {
     .hero h1 {
         font-size: 28px;
     }
+}
+
+.social-icons {
+    gap: 20px;  /* Change this value */
 }
