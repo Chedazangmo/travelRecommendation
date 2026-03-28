@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1><img src="https://pngimg.com/uploads/earth/earth_PNG36.png">Explore</h1>
+        </div>
+        <ul>
+            <li><a href="./travel_recommendation.html">Home</a></li>
+            <li><a href="./about_us.html">About Us</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="contactus">
+        <div class="contactus-container">
+            <!-- Left Side - Contact Form -->
+            <div class="contact-left">
+                <h1>Contact Us 📞📩</h1>
+                <p>Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+975 1234 5678</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@explore.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Thimphu, Bhutan</span>
+                    </div>
+                </div>
+
+                <form id="contactForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter Your Name">
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter Your Email">
+                    
+                    <label for="msg">Message:</label>
+                    <textarea id="msg" placeholder="Enter Your Message"></textarea>
+                    
+                    <button id="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Social Icons - Separate, outside the form box, on the right side -->
+        <div class="contact-social">
+            <h3>Connect With Us</h3>
+            <div class="social-icons-horizontal">
+                <a href="https://twitter.com" target="_blank" class="social-icon twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://facebook.com" target="_blank" class="social-icon facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="social-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com" target="_blank" class="social-icon youtube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="./travel_recommendation.js"></script>
+</body>
+</html>
