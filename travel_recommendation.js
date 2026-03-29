@@ -1,7 +1,47 @@
-// ==============================
 //  GLOBAL DATA
 // ==============================
 let travelData = {};
+
+// ==============================
+// SUBMIT BUTTON CONFIRMATION WITH VALIDATION
+// ==============================
+const submitBtn = document.getElementById("submit");
+
+submitBtn?.addEventListener("click", (e) => {
+  e.preventDefault(); // prevent default form submission
+
+  const name = document.getElementById("name")?.value.trim();
+  const email = document.getElementById("email")?.value.trim();
+  const message = document.getElementById("message")?.value.trim();
+
+  // check required fields
+  if (!name || !email || !message) {
+    alert("Please fill all required fields!");
+    return;
+  }
+
+  //  simple email validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address!");
+    return;
+  }
+
+  // if all validations pass
+  alert("Thank you for contacting us 💖!");
+
+  // optionally, clear the form
+  document.getElementById("contactForm")?.reset();
+});
+
+// ==============================
+// BOOK BUTTON CONFIRMATION
+// ==============================
+const bookBtn = document.getElementById("bookbtn");
+bookBtn?.addEventListener("click", (e) => {
+    e.preventDefault(); // prevent default if inside a form
+    alert("Thank you for booking!");
+  });
 
 // ==============================
 // FETCH JSON DATA
@@ -127,3 +167,4 @@ setInterval(() => {
     el.innerText = getLocalTime(tz);
   });
 }, 1000);
+
