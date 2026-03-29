@@ -98,48 +98,59 @@ function createCard(place) {
 // ==============================
 // SEARCH FUNCTION
 // ==============================
+
+
+/// ==============================
+// SEARCH FUNCTION
+// ==============================
 function searchKeyword() {
-  const input = document.getElementById("placeInput").value.trim().toLowerCase();
-  const resultsDiv = document.getElementById("results");
-  const homeContent = document.querySelector(".homepage-content");
+    const input = document.getElementById("placeInput").value.trim().toLowerCase();
+    const resultsDiv = document.getElementById("results");
+    const searchHeader = document.querySelector(".search-header");
+    const homeContent = document.querySelector(".homepage-content");
 
-  resultsDiv.innerHTML = "";
-  if (homeContent) homeContent.style.display = "none";
+    // clear previous results
+    resultsDiv.innerHTML = "";
+    searchHeader.innerText = ""; // clear header
+    if (homeContent) homeContent.style.display = "none";
 
-  const addedPlaces = new Set();
+    const addedPlaces = new Set();
+    let hasResults = false;
 
-  // Helper to add place if not duplicate
-  const addPlace = (place) => {
-    if (!addedPlaces.has(place.name)) {
-      resultsDiv.appendChild(createCard(place));
-      addedPlaces.add(place.name);
-    }
-  };
+    // Helper to add place if not duplicate
+    const addPlace = (place) => {
+        if (!addedPlaces.has(place.name)) {
+            resultsDiv.appendChild(createCard(place));
+            addedPlaces.add(place.name);
+            hasResults = true;
+        }
+    };
 
-  //  Keyword search
-  if (input === "beach" || input === "beaches") {
-    travelData.beaches?.forEach(addPlace);
-  } else if (input === "temple" || input === "temples") {
-    travelData.temples?.forEach(addPlace);
-  } 
-  // Country & City search
-  else {
-    travelData.countries?.forEach((country) => {
-      if (country.name.toLowerCase().includes(input)) {
-        country.cities?.forEach(addPlace);
-      } else {
-        country.cities?.forEach((city) => {
-          if (city.name.toLowerCase().includes(input)) addPlace(city);
+    // Keyword search
+    if (input === "beach" || input === "beaches") {
+        travelData.beaches?.forEach(addPlace);
+    } else if (input === "temple" || input === "temples") {
+        travelData.temples?.forEach(addPlace);
+    } else {
+        travelData.countries?.forEach((country) => {
+            if (country.name.toLowerCase().includes(input)) {
+                country.cities?.forEach(addPlace);
+            } else {
+                country.cities?.forEach((city) => {
+                    if (city.name.toLowerCase().includes(input)) addPlace(city);
+                });
+            }
         });
-      }
-    });
-  }
+    }
 
-  if (resultsDiv.innerHTML === "") {
-    resultsDiv.innerHTML = "<p>No results found</p>";
-  }
+    // Show header and results
+    if (hasResults) {
+        searchHeader.innerText = "Searched Results";
+    } else {
+        searchHeader.innerText = "";
+        resultsDiv.innerHTML = "<p class='no-results'>No results found</p>";
+    }
 }
-
 // ==============================
 // CLEAR FUNCTION
 // ==============================

@@ -591,3 +591,16 @@ nav ul li button:active {
     .homepage .social-icon { width: 40px; height: 40px; font-size: 18px; }
     .team-container { grid-template-columns: 1fr; }
 }
+
+.search-header {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff; 
+    text-align: center;
+    margin: 20px 0 10px 0;
+    display: block;
+    width: 100%;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 10; 
+}
