@@ -6,13 +6,15 @@
         "cities": [
           {
             "name": "Sydney, Australia",
-            "imageUrl": "enter_your_image_for_sydney.jpg",
-            "description": "A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge."
+            "imageUrl": "https://images.adsttc.com/media/images/627b/8241/3e4b/315d/c800/0018/newsletter/%C2%A9_Foster___Partners_2576_FP621543.jpg?1652261435",
+            "description": "A vibrant city known for its iconic landmarks like the Sydney Opera House and Sydney Harbour Bridge.",
+            "timeZone": "Australia/Sydney"
           },
           {
             "name": "Melbourne, Australia",
-            "imageUrl": "enter_your_image_for_melbourne.jpg",
-            "description": "A cultural hub famous for its art, food, and diverse neighborhoods."
+            "imageUrl": "https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/http://images.ntmllc.com/v4/hotel/V26/V26235/V26235_EXT_Z32B29/Hyde-Melbourne-Place-Exterior.jpg?tr=w-780%2Ch-437%2Cfo-auto",
+            "description": "A cultural hub famous for its art, food, and diverse neighborhoods.",
+            "timeZone": "Australia/Melbourne"
           }
         ]
       },
@@ -22,13 +24,15 @@
         "cities": [
           {
             "name": "Tokyo, Japan",
-            "imageUrl": "enter_your_image_for_tokyo.jpg",
-            "description": "A bustling metropolis blending tradition and modernity, famous for its cherry blossoms and rich culture."
+            "imageUrl": "https://www.thatonepointofview.com/wp-content/uploads/2024/03/Asakusa-in-Tokyo.jpg",
+            "description": "A bustling metropolis blending tradition and modernity.",
+            "timeZone": "Asia/Tokyo"
           },
           {
             "name": "Kyoto, Japan",
-            "imageUrl": "enter_your_image_for_kyoto.jpg",
-            "description": "Known for its historic temples, gardens, and traditional tea houses."
+            "imageUrl": "https://www.wanderlustdesigners.com/wp-content/uploads/2024/04/kiyomizu-dera-temple-in-kyoto-japan.jpg",
+            "description": "Known for its historic temples, gardens, and tea houses.",
+            "timeZone": "Asia/Tokyo"
           }
         ]
       },
@@ -38,44 +42,51 @@
         "cities": [
           {
             "name": "Rio de Janeiro, Brazil",
-            "imageUrl": "enter_your_image_for_rio.jpg",
-            "description": "A lively city known for its stunning beaches, vibrant carnival celebrations, and iconic landmarks."
+            "imageUrl": "https://media.tacdn.com/media/attractions-splice-spp-674x446/06/d6/45/2c.jpg",
+            "description": "A lively city known for beaches and carnival.",
+            "timeZone": "America/Sao_Paulo"
           },
           {
             "name": "São Paulo, Brazil",
-            "imageUrl": "enter_your_image_for_sao-paulo.jpg",
-            "description": "The financial hub with diverse culture, arts, and a vibrant nightlife."
+            "imageUrl": "https://www.travelandleisure.com/thmb/N4EkBfm8v7Sy-op5qm_GfeU6wSg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-lead-image-SAOPAULODOTYBRAZIL-653940febd344b81b18849add122ddb6.jpg",
+            "description": "The financial hub with vibrant nightlife.",
+            "timeZone": "America/Sao_Paulo"
           }
         ]
       }
     ],
+  
     "temples": [
       {
         "id": 1,
         "name": "Angkor Wat, Cambodia",
-        "imageUrl": "enter_your_image_for_angkor-wat.jpg",
-        "description": "A UNESCO World Heritage site and the largest religious monument in the world."
+        "imageUrl": "https://res.cloudinary.com/rainforest-cruises/images/c_fill,g_auto/f_auto,q_auto/v1622132865/Where-is-Angkor-Wat-Main/Where-is-Angkor-Wat-Main.jpg",
+        "description": "A UNESCO World Heritage site.",
+        "timeZone": "Asia/Phnom_Penh"
       },
       {
         "id": 2,
         "name": "Taj Mahal, India",
-        "imageUrl": "enter_your_image_for_taj-mahal.jpg",
-        "description": "An iconic symbol of love and a masterpiece of Mughal architecture."
+        "imageUrl": "https://www.tourism-of-india.com/pictures/travel_guide/attractions/thmb/taj-mahal-agra-252.jpeg?370x248",
+        "description": "A symbol of love.",
+        "timeZone": "Asia/Kolkata"
       }
     ],
+  
     "beaches": [
       {
         "id": 1,
         "name": "Bora Bora, French Polynesia",
-        "imageUrl": "enter_your_image_for_bora-bora.jpg",
-        "description": "An island known for its stunning turquoise waters and luxurious overwater bungalows."
+        "imageUrl": "https://digital.ihg.com/is/image/ihg/intercontinental-bora-bora-5357284500-2x1",
+        "description": "Beautiful turquoise waters.",
+        "timeZone": "Pacific/Tahiti"
       },
       {
         "id": 2,
         "name": "Copacabana Beach, Brazil",
-        "imageUrl": "enter_your_image_for_copacabana.jpg",
-        "description": "A famous beach in Rio de Janeiro, Brazil, with a vibrant atmosphere and scenic views."
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Hotel_Copacabana_Palace%2C_R%C3%ADo_de_Janeiro_A74224720241122.jpg",
+        "description": "Famous beach in Rio.",
+        "timeZone": "America/Sao_Paulo"
       }
     ]
   }
-  

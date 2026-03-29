@@ -1,4 +1,6 @@
-/* Reset and Base Styles */
+/* ============================================ */
+/* BASE STYLES */
+/* ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -11,14 +13,16 @@ body {
     color: #333;
 }
 
-/* Navigation Bar Styles */
+/* ============================================ */
+/* NAVIGATION BAR */
+/* ============================================ */
 nav {
     background: linear-gradient(135deg, #1a3e60 0%, #2c3e50 100%);
     padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -47,23 +51,20 @@ nav {
     transform: rotate(360deg);
 }
 
-/* Navigation Links */
 nav ul {
     display: flex;
     list-style: none;
     gap: 25px;
     align-items: center;
-    margin: 0;
-    padding: 0;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     padding: 8px 16px;
-    transition: all 0.3s ease;
     border-radius: 5px;
     font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -71,16 +72,15 @@ nav ul li a:hover {
     transform: translateY(-2px);
 }
 
-/* Search Input Styles */
+/* Search Input */
 nav ul li input {
     padding: 10px 15px;
-    border: none;
+    border: 2px solid transparent;
     border-radius: 25px;
     outline: none;
     width: 220px;
     font-size: 14px;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
 }
 
 nav ul li input:focus {
@@ -88,7 +88,7 @@ nav ul li input:focus {
     width: 260px;
 }
 
-/* Search Button Styles */
+/* Search Button */
 nav ul li button {
     padding: 10px 25px;
     background-color: #3498db;
@@ -103,14 +103,16 @@ nav ul li button {
 nav ul li button:hover {
     background-color: #2980b9;
     transform: translateY(-2px);
-    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.4);
+    box-shadow: 0 2px 8px rgba(52,152,219,0.4);
 }
 
 nav ul li button:active {
     transform: translateY(0);
 }
 
-/* Hero Section */
+/* ============================================ */
+/* HERO SECTION */
+/* ============================================ */
 .hero {
     text-align: center;
     padding: 80px 20px;
@@ -131,7 +133,9 @@ nav ul li button:active {
     animation: fadeInUp 0.8s ease;
 }
 
-/* Results Container */
+/* ============================================ */
+/* RESULTS SECTION */
+/* ============================================ */
 #results {
     max-width: 1200px;
     margin: 0 auto;
@@ -139,32 +143,41 @@ nav ul li button:active {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
+    position: relative;
+    z-index: 2;
 }
 
-/* Destination Card Styles */
-.destination-card {
+/* Destination Cards */
+.destination-card,
+.card {
     background: white;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
-    animation: fadeIn 0.5s ease;
+    text-align: center;
 }
 
-.destination-card:hover {
+.destination-card:hover,
+.card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
 }
 
-.destination-card img {
+.destination-card img,
+.card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(1.15) contrast(1.2) saturate(1.05);
 }
 
-.destination-card:hover img {
+.destination-card:hover img,
+.card:hover img {
     transform: scale(1.05);
+    filter: brightness(1.2) contrast(1.25) saturate(1.1);
 }
 
 .destination-card-content {
@@ -211,41 +224,29 @@ nav ul li button:active {
     font-weight: bold;
 }
 
-/* Animations */
+/* ============================================ */
+/* ANIMATIONS */
+/* ============================================ */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Loading Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 .loading {
     text-align: center;
     padding: 60px;
@@ -263,11 +264,6 @@ nav ul li button:active {
     animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
 /* ============================================ */
 /* HOMEPAGE SECTION */
 /* ============================================ */
@@ -275,7 +271,6 @@ nav ul li button:active {
     background-image: url('https://arzotravels.com/wp-content/uploads/2017/11/Scenic-picture-postcard-view-of-famous-Amalfi-Coast-with-Gulf-of-Salerno-from-Villa-Rufolo-gardens-in-Ravello-Campania-Italy.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 80vh;
     display: flex;
@@ -286,19 +281,16 @@ nav ul li button:active {
     color: white;
 }
 
-/* Dark overlay for better text readability */
 .homepage::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    pointer-events: none;
     background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
     z-index: 1;
 }
 
-/* Left Side Content */
+/* Homepage Content */
 .homepage-content {
     position: relative;
     z-index: 2;
@@ -319,10 +311,9 @@ nav ul li button:active {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-/* Button Styles */
 .homepage-content button {
     padding: 12px 35px;
-    background-color: rgba(52, 152, 219, 0.9);
+    background-color: rgba(52,152,219,0.9);
     color: white;
     border: none;
     border-radius: 50px;
@@ -331,139 +322,60 @@ nav ul li button:active {
     font-size: 16px;
     transition: all 0.3s ease;
     margin-top: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .homepage-content button:hover {
     background-color: #2980b9;
     transform: translateY(-3px);
-    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.5);
+    box-shadow: 0 4px 15px rgba(52,152,219,0.5);
 }
 
 .homepage-content button:active {
     transform: translateY(0);
 }
 
-/* Homepage Social Icons */
-.homepage .social-icons {
-    position: relative;
-    z-index: 2;
+/* ============================================ */
+/* GLOBAL SOCIAL ICONS (ALL PAGES) */
+/* ============================================ */
+.social-icons,
+.social-icons-horizontal,
+.contact-social {
     display: flex;
-    flex-direction: column;
     gap: 20px;
+    position: relative; /* ensures icons above overlays */
+    z-index: 2;
 }
 
-.homepage .social-icon {
+.social-icon {
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 50px;
+    align-items: center;
+    width: 50px;      /* perfect circle */
     height: 50px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
     border-radius: 50%;
     color: white;
     font-size: 24px;
-    transition: all 0.3s ease;
+    background-color: rgba(255,255,255,0.2);
     text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
 }
 
-.homepage .social-icon:hover {
-    transform: translateX(-5px) scale(1.1);
-    background-color: rgba(255, 255, 255, 0.3);
+/* Hover effect for all icons */
+.social-icon:hover {
+    transform: scale(1.1);
 }
 
-.homepage .social-icon.twitter:hover {
-    background-color: #1DA1F2;
-    box-shadow: 0 0 15px rgba(29, 161, 242, 0.5);
+/* Individual platform hover colors */
+.social-icon.twitter:hover { background-color: #1DA1F2; }
+.social-icon.facebook:hover { background-color: #4267B2; }
+.social-icon.instagram:hover {
+    background: radial-gradient(circle at 30% 110%, 
+        #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
-
-.homepage .social-icon.facebook:hover {
-    background-color: #4267B2;
-    box-shadow: 0 0 15px rgba(66, 103, 178, 0.5);
-}
-
-.homepage .social-icon.instagram:hover {
-    background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    box-shadow: 0 0 15px rgba(214, 36, 159, 0.5);
-}
-
-.homepage .social-icon.youtube:hover {
-    background-color: #FF0000;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
-}
-
-/* Homepage Responsive */
-@media (max-width: 1024px) {
-    .homepage {
-        padding: 60px 40px;
-    }
-    
-    .homepage-content h1 {
-        font-size: 44px;
-    }
-}
-
-@media (max-width: 768px) {
-    .homepage {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 60px 30px;
-    }
-    
-    .homepage-content {
-        text-align: center;
-        margin-bottom: 40px;
-    }
-    
-    .homepage-content h1 {
-        font-size: 36px;
-    }
-    
-    .homepage-content p {
-        font-size: 16px;
-    }
-    
-    .homepage .social-icons {
-        flex-direction: row;
-        gap: 15px;
-    }
-    
-    .homepage .social-icon:hover {
-        transform: translateY(-5px) scale(1.1);
-    }
-}
-
-@media (max-width: 480px) {
-    .homepage {
-        padding: 40px 20px;
-    }
-    
-    .homepage-content h1 {
-        font-size: 28px;
-    }
-    
-    .homepage-content p {
-        font-size: 14px;
-    }
-    
-    .homepage-content button {
-        padding: 10px 25px;
-        font-size: 14px;
-    }
-    
-    .homepage .social-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-    
-    .homepage .social-icons {
-        gap: 20px;
-    }
-}
+.social-icon.youtube:hover { background-color: #FF0000; }
 
 /* ============================================ */
 /* ABOUT US SECTION */
@@ -472,23 +384,19 @@ nav ul li button:active {
     background-image: url('https://d2vbr83hnyiux1.cloudfront.net/image/975050285728/image_ud2j2mmskp2jv6b53uutr9b21l/-FWEBP-Ro:5,w:1440,h:810,n:default');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     position: relative;
     color: white;
-    overflow-y: hidden;
 }
 
 .aboutus::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    pointer-events: none;
     background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
     z-index: 1;
 }
@@ -519,33 +427,7 @@ nav ul li button:active {
     margin-bottom: 12px;
 }
 
-/* Social Icons - Bigger */
-.social-icon {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    border-radius: 50%;
-    color: white;
-    font-size: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-    transform: translateX(-5px) scale(1.1);
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-.social-icon.twitter:hover { background-color: #1DA1F2; }
-.social-icon.facebook:hover { background-color: #4267B2; }
-.social-icon.instagram:hover { background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-.social-icon.youtube:hover { background-color: #FF0000; }
-
-/* Team Section - Reduced Space */
+/* Team Section */
 .team-section {
     position: relative;
     z-index: 2;
@@ -560,23 +442,23 @@ nav ul li button:active {
 
 .team-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 15px;
 }
 
 .team-card {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255,255,255,0.15);
     backdrop-filter: blur(8px);
     border-radius: 10px;
     padding: 10px;
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255,255,255,0.2);
     transition: all 0.3s ease;
 }
 
 .team-card:hover {
     transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255,255,255,0.25);
 }
 
 .team-image {
@@ -588,229 +470,17 @@ nav ul li button:active {
     border: 2px solid #3498db;
 }
 
-.team-card h3 {
-    font-size: 20px;
-    margin: 8px 0 4px;
-}
-
-.team-role {
-    color: #ffd700;
-    font-size: 15px;
-    margin-bottom: 6px;
-}
-
-.team-description {
-    font-size: 15px;
-    line-height: 1.4;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .aboutus-top {
-        padding: 15px 40px 5px 40px;
-    }
-    .aboutus-content {
-        max-width: 70%;
-    }
-    .social-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 24px;
-    }
-    .team-section {
-        padding: 0 40px 25px 40px;
-    }
-    .team-container {
-        gap: 12px;
-    }
-}
-
-@media (max-width: 768px) {
-    .aboutus-top {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px 30px;
-        gap: 20px;
-    }
-    .aboutus-content {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-    .social-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 22px;
-    }
-    .team-section {
-        padding: 0 30px 20px 30px;
-    }
-    .team-section h2 {
-        font-size: 28px;
-    }
-    .team-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .aboutus-top {
-        padding: 10px 20px;
-    }
-    .aboutus-content h1 {
-        font-size: 32px;
-    }
-    .aboutus-content p {
-        font-size: 14px;
-    }
-    .social-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 20px;
-    }
-    .team-section {
-        padding: 0 20px 15px 20px;
-    }
-    .team-section h2 {
-        font-size: 24px;
-    }
-    .team-container {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    .team-image {
-        width: 60px;
-        height: 60px;
-    }
-}
-
-/* General Responsive Design for Navigation */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        padding: 15px 20px;
-        gap: 15px;
-    }
-    
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-    
-    nav ul li input {
-        width: 180px;
-    }
-    
-    nav ul li input:focus {
-        width: 200px;
-    }
-    
-    .hero h1 {
-        font-size: 32px;
-    }
-    
-    .hero p {
-        font-size: 16px;
-    }
-    
-    #results {
-        grid-template-columns: 1fr;
-        padding: 15px;
-    }
-    
-    .destination-card img {
-        height: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    nav ul li {
-        width: 100%;
-        text-align: center;
-    }
-    
-    nav ul li input {
-        width: 100%;
-    }
-    
-    nav ul li input:focus {
-        width: 100%;
-    }
-    
-    nav ul li button {
-        width: 100%;
-    }
-    
-    .hero {
-        padding: 50px 20px;
-    }
-    
-    .hero h1 {
-        font-size: 28px;
-    }
-}
-
-.social-icons {
-    gap: 20px;  /* Change this value */
-}
-
-
-.contactus {
-    background-image: url('https://d2vbr83hnyiux1.cloudfront.net/image/975050285728/image_ud2j2mmskp2jv6b53uutr9b21l/-FWEBP-Ro:5,w:1440,h:810,n:default');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    color: white;
-    overflow-y: hidden;
-}
-
-.contactus::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
-    z-index: 1;
-}
-
-
-.aboutus-content {
-    flex: none;
-    max-width: 75%;
-}
-
-.aboutus-content h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.aboutus-content p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 12px;
-}
+.team-card h3 { font-size: 20px; margin: 8px 0 4px; }
+.team-role { color: #ffd700; font-size: 15px; margin-bottom: 6px; }
+.team-description { font-size: 15px; line-height: 1.4; }
 
 /* ============================================ */
-/* CONTACT US SECTION - FORM LEFT, ICONS RIGHT */
+/* CONTACT US SECTION */
 /* ============================================ */
 .contactus {
     background-image: url('https://d2vbr83hnyiux1.cloudfront.net/image/975050285728/image_ud2j2mmskp2jv6b53uutr9b21l/-FWEBP-Ro:5,w:1440,h:810,n:default');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
     display: flex;
@@ -824,64 +494,32 @@ nav ul li button:active {
 .contactus::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
+    pointer-events: none;
     background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
     z-index: 1;
 }
 
-/* Contact Form Container - Left Side */
 .contactus-container {
     position: relative;
     z-index: 2;
     width: 450px;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 30px 35px;
 }
 
-.contact-left h1 {
-    font-size: 36px;
-    margin-bottom: 15px;
-}
-
-.contact-left p {
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    opacity: 0.9;
-}
+.contact-left h1 { font-size: 36px; margin-bottom: 15px; }
+.contact-left p { font-size: 14px; line-height: 1.5; margin-bottom: 20px; opacity: 0.9; }
 
 /* Contact Info */
-.contact-info {
-    margin-bottom: 20px;
-}
+.contact-info { margin-bottom: 20px; }
+.info-item { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-size: 14px; }
+.info-item i { width: 25px; font-size: 16px; color: #ffd700; }
 
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-
-.info-item i {
-    width: 25px;
-    font-size: 16px;
-    color: #ffd700;
-}
-
-/* Form Styles */
-#contactForm label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 13px;
-}
-
+/* Form */
+#contactForm label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 13px; }
 #contactForm input,
 #contactForm textarea {
     width: 100%;
@@ -889,21 +527,12 @@ nav ul li button:active {
     margin-bottom: 12px;
     border: none;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255,255,255,0.9);
     font-size: 14px;
     box-sizing: border-box;
 }
-
-#contactForm input {
-    height: 42px;
-}
-
-#contactForm textarea {
-    height: 80px;
-    resize: none;
-    font-family: inherit;
-}
-
+#contactForm input { height: 42px; }
+#contactForm textarea { height: 80px; resize: none; font-family: inherit; }
 #contactForm button {
     width: 100%;
     padding: 10px;
@@ -917,150 +546,48 @@ nav ul li button:active {
     transition: all 0.3s ease;
     margin-top: 5px;
 }
+#contactForm button:hover { background-color: #2980b9; transform: translateY(-2px); }
 
-#contactForm button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
+/* ============================================ */
+/* MEDIA QUERIES (RESPONSIVE) */
+/* ============================================ */
+@media (max-width:1024px) {
+    .homepage { padding: 60px 40px; }
+    .homepage-content h1 { font-size: 44px; }
+    .aboutus-top { padding: 15px 40px 5px 40px; }
+    .aboutus-content { max-width: 70%; }
+    .social-icon { width: 55px; height: 55px; font-size: 24px; }
+    .team-section { padding: 0 40px 25px 40px; }
+    .team-container { gap: 12px; }
+    .contactus { padding: 20px 50px; }
+    .contactus-container { width: 400px; padding: 25px 30px; }
 }
 
-/* Social Icons - Right Side */
-.contact-social {
-    position: relative;
-    z-index: 2;
-    width: 200px;
-    text-align: center;
+@media (max-width:768px) {
+    nav { flex-direction: column; padding: 15px 20px; gap: 15px; }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+    nav ul li input { width: 180px; }
+    nav ul li input:focus { width: 200px; }
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 16px; }
+    #results { grid-template-columns: 1fr; padding: 15px; }
+    .destination-card img { height: 200px; }
+    .homepage { flex-direction: column; text-align: center; padding: 60px 30px; }
+    .homepage .social-icons { gap: 15px; z-index: 2; }
+    .team-container { grid-template-columns: repeat(2,1fr); }
+    .contactus { flex-direction: column; padding: 20px 30px; }
+    .contactus-container { width: 100%; }
 }
 
-.contact-social h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-}
-
-.social-icons-horizontal {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px;
-}
-
-.social-icons-horizontal .social-icon {
-    width: 50px;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(5px);
-    border-radius: 50%;
-    color: white;
-    font-size: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-icons-horizontal .social-icon:hover {
-    transform: translateY(-5px) scale(1.1);
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-.social-icons-horizontal .social-icon.twitter:hover { background-color: #1DA1F2; }
-.social-icons-horizontal .social-icon.facebook:hover { background-color: #4267B2; }
-.social-icons-horizontal .social-icon.instagram:hover { background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
-.social-icons-horizontal .social-icon.youtube:hover { background-color: #FF0000; }
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .contactus {
-        padding: 20px 50px;
-    }
-    
-    .contactus-container {
-        width: 400px;
-        padding: 25px 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .contactus {
-        flex-direction: column;
-        justify-content: center;
-        padding: 40px 30px;
-        gap: 40px;
-    }
-    
-    .contactus-container {
-        width: 100%;
-        max-width: 450px;
-    }
-    
-    .contact-social {
-        width: 100%;
-    }
-    
-    .contact-left h1 {
-        text-align: center;
-    }
-    
-    .contact-left p {
-        text-align: center;
-    }
-    
-    .contact-social h3 {
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .contactus {
-        padding: 20px;
-    }
-    
-    .contactus-container {
-        padding: 20px;
-    }
-    
-    .contact-left h1 {
-        font-size: 28px;
-    }
-    
-    .social-icons-horizontal .social-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-}
-
-/* FORCE CONTACT PAGE LAYOUT */
-.contactus {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-}
-
-.contactus-container {
-    margin: 0 !important;
-    width: 450px !important;
-}
-
-.contact-social {
-    margin: 0 !important;
-    width: auto !important;
-}
-
-.social-icons-horizontal {
-    display: flex !important;
-    flex-direction: row !important;
-    gap: 15px !important;
-}
-
-@media (max-width: 768px) {
-    .contactus {
-        flex-direction: column !important;
-        gap: 40px !important;
-    }
-    
-    .contactus-container {
-        width: 100% !important;
-    }
+@media (max-width:480px) {
+    nav ul { flex-direction: column; width: 100%; }
+    nav ul li { width: 100%; text-align: center; }
+    nav ul li input, nav ul li input:focus, nav ul li button { width: 100%; }
+    .hero { padding: 50px 20px; }
+    .hero h1 { font-size: 28px; }
+    .homepage-content h1 { font-size: 28px; }
+    .homepage-content p { font-size: 14px; }
+    .homepage-content button { padding: 10px 25px; font-size: 14px; }
+    .homepage .social-icon { width: 40px; height: 40px; font-size: 18px; }
+    .team-container { grid-template-columns: 1fr; }
 }
