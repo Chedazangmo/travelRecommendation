@@ -95,11 +95,6 @@ function createCard(place) {
   return card;
 }
 
-// ==============================
-// SEARCH FUNCTION
-// ==============================
-
-
 /// ==============================
 // SEARCH FUNCTION
 // ==============================
@@ -111,13 +106,12 @@ function searchKeyword() {
 
     // clear previous results
     resultsDiv.innerHTML = "";
-    searchHeader.innerText = ""; // clear header
+    searchHeader.innerText = "";
     if (homeContent) homeContent.style.display = "none";
 
     const addedPlaces = new Set();
     let hasResults = false;
 
-    // Helper to add place if not duplicate
     const addPlace = (place) => {
         if (!addedPlaces.has(place.name)) {
             resultsDiv.appendChild(createCard(place));
@@ -126,12 +120,22 @@ function searchKeyword() {
         }
     };
 
-    // Keyword search
-    if (input === "beach" || input === "beaches") {
+    // Special keyword: "country" or "countries" → show all cities
+    if (input === "country" || input === "countries") {
+        travelData.countries?.forEach((country) => {
+            country.cities?.forEach(addPlace);
+        });
+    } 
+    // Beaches
+    else if (input === "beach" || input === "beaches") {
         travelData.beaches?.forEach(addPlace);
-    } else if (input === "temple" || input === "temples") {
+    } 
+    // Temples
+    else if (input === "temple" || input === "temples") {
         travelData.temples?.forEach(addPlace);
-    } else {
+    } 
+    // Otherwise, normal country/city search
+    else {
         travelData.countries?.forEach((country) => {
             if (country.name.toLowerCase().includes(input)) {
                 country.cities?.forEach(addPlace);
@@ -143,12 +147,15 @@ function searchKeyword() {
         });
     }
 
-    // Show header and results
     if (hasResults) {
         searchHeader.innerText = "Searched Results";
     } else {
         searchHeader.innerText = "";
-        resultsDiv.innerHTML = "<p class='no-results'>No results found</p>";
+        resultsDiv.innerHTML = `
+            <div class="no-results">
+                <p>No results found</p>
+            </div>
+        `;
     }
 }
 // ==============================
